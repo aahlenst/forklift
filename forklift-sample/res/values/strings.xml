@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Forklift Sample</string>
+    <string name="tab_cantons">Swiss cantons</string>
+    <string name="tab_mountains">Swiss mountains</string>
+    <string name="mountain_height">%s m</string>
+</resources>
