@@ -52,7 +52,7 @@ public abstract class AbstractBundledSqliteOpenHelper {
      * @param version Version number of the database (>= 1).
      * @param factory Factory to use for creating cursor objects.
      */
-    public AbstractBundledSqliteOpenHelper(Context context, String databaseName, int version,
+    protected AbstractBundledSqliteOpenHelper(Context context, String databaseName, int version,
                                            SQLiteDatabase.CursorFactory factory) {
         if (context == null) {
             throw new IllegalArgumentException("The context may not be null.");
