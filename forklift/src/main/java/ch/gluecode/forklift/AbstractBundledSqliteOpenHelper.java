@@ -130,7 +130,7 @@ public abstract class AbstractBundledSqliteOpenHelper {
                 Log.i(TAG, String.format("Database on device (version %s) is outdated, replacing it with bundled "
                         + "one (version %s).", oldVersion, version));
 
-                // Close database, copy the bundled one to /data/data/<app-pkg-databaseName>/databases/ and reopen it.
+                // Close database, copy the bundled one to /data/data/<app-pkg>/databases/ and reopen it.
                 db.close();
 
                 try {
