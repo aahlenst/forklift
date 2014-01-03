@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-import org.robolectric.shadows.ShadowSQLiteDatabase;
 
 import java.io.InputStream;
 
@@ -32,12 +31,6 @@ public class AbstractBundledSqliteOpenHelperTest {
     public void databaseSuccessfullyCopiedAndUsableOnInitialUsage() throws Exception {
         TestBundledSqliteOpenHelper helper = new TestBundledSqliteOpenHelper(activity, "cantons.db", "/cantons.db", 1);
         SQLiteDatabase db = helper.getDatabase();
-
-        /*
-         * It's necessary to reset the shadow, because it doesn't really close the foremost opened in-memory database
-         * and would re-use it instead of opening the bundled database that was copied over to the database directory.
-         */
-        ShadowSQLiteDatabase.reset();
 
         Cursor cursor = db.rawQuery("select * from cantons", null);
 
